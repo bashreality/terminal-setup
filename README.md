@@ -8,8 +8,7 @@ Motyw wszędzie: **Catppuccin Mocha**.
 
 ```bash
 xcode-select --install            # jeśli jeszcze nie ma git
-gh auth login                     # albo: git clone przez HTTPS z tokenem
-gh repo clone bashreality/terminal-setup ~/terminal-setup
+git clone https://github.com/bashreality/terminal-setup.git ~/terminal-setup
 cd ~/terminal-setup
 ./install.sh
 ```
