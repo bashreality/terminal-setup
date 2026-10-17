@@ -1,0 +1,22 @@
+font-family = "JetBrainsMono Nerd Font"
+font-size = 17
+font-thicken = true
+
+theme = "Catppuccin Mocha"
+background-opacity = 0.95
+background-blur-radius = 20
+
+window-padding-x = 10
+window-padding-y = 10
+window-vsync = true
+window-save-state = always
+macos-titlebar-style = transparent
+
+cursor-style = block
+cursor-style-blink = true
+shell-integration = zsh
+
+copy-on-select = true
+mouse-hide-while-typing = true
+quit-after-last-window-closed = true
+scrollback-limit = 10000

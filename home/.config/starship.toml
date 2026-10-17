@@ -1,0 +1,255 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+$os\
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_status\
+$git_state\
+$c\
+$cpp\
+$rust\
+$golang\
+$nodejs\
+$php\
+$java\
+$kotlin\
+$haskell\
+$python\
+$lua\
+$docker_context\
+$kubernetes\
+$conda\
+$pixi\
+$aws\
+$gcloud\
+$cmd_duration\
+$line_break\
+$jobs\
+$status\
+$character"""
+
+palette = 'catppuccin_mocha'
+
+[palettes.catppuccin_mocha]
+color_fg     = '#cdd6f4'
+color_bg1    = '#585b70'
+color_bg2    = '#45475a'
+color_bg3    = '#313244'
+color_blue   = '#89b4fa'
+color_cyan   = '#89dceb'
+color_green  = '#a6e3a1'
+color_orange = '#fab387'
+color_purple = '#cba6f7'
+color_red    = '#f38ba8'
+color_yellow = '#f9e2af'
+color_white  = '#cdd6f4'
+color_pink   = '#f5c2e7'
+color_teal   = '#94e2d5'
+color_sky    = '#89dceb'
+color_sapphire = '#74c7ec'
+color_lavender = '#b4befe'
+
+[os]
+disabled = false
+style = "fg:color_cyan bold"
+format = "[$symbol ]($style)"
+
+[os.symbols]
+Windows          = "󰍲"
+Ubuntu           = "󰕈"
+SUSE             = ""
+Raspbian         = "󰐿"
+Mint             = "󰣭"
+Macos            = "󰀵"
+Manjaro          = ""
+Linux            = "󰌽"
+Gentoo           = "󰣨"
+Fedora           = "󰣛"
+Alpine           = ""
+Amazon           = ""
+Android          = ""
+Arch             = "󰣇"
+Artix            = "󰣇"
+EndeavourOS      = ""
+CentOS           = ""
+Debian           = "󰣚"
+Redhat           = "󱄛"
+RedHatEnterprise = "󱄛"
+Pop              = ""
+
+[username]
+show_always = true
+style_user  = "fg:color_cyan bold"
+style_root  = "fg:color_red bold"
+format      = '[$user]($style)[@]($style)'
+
+[hostname]
+ssh_only = false
+style    = "fg:color_blue bold"
+format   = '[$hostname]($style) '
+trim_at  = '.'
+
+[directory]
+style             = "fg:color_blue bold"
+read_only_style   = "fg:color_red"
+format            = "in [$path]($style)[$read_only]($read_only_style) "
+truncation_length = 4
+truncation_symbol = "…/"
+read_only         = " 󰌾"
+
+[directory.substitutions]
+"Documents" = "󰈙 Docs"
+"Downloads" = " Downloads"
+"Music"     = "󰝚 Music"
+"Pictures"  = " Pictures"
+"Developer" = "󰲋 Dev"
+"Desktop"   = "󰇄 Desktop"
+"Projects"  = " Projects"
+
+[git_branch]
+symbol            = " "
+style             = "fg:color_purple bold"
+format            = 'on [$symbol$branch(:$remote_branch)]($style) '
+truncation_length = 20
+
+[git_status]
+style       = "fg:color_purple"
+format      = '([$all_status$ahead_behind]($style) )'
+conflicted  = "⚡"
+ahead       = "⇡${count}"
+behind      = "⇣${count}"
+diverged    = "⇕⇡${ahead_count}⇣${behind_count}"
+up_to_date  = "✓"
+untracked   = "?${count}"
+stashed     = " "
+modified    = "!${count}"
+staged      = "+${count}"
+renamed     = "»${count}"
+deleted     = "✘${count}"
+
+[git_state]
+format = '\([$state($progress_current/$progress_total)]($style)\) '
+style  = "fg:color_yellow bold"
+
+[cmd_duration]
+min_time          = 2000
+format            = "took [$duration]($style) "
+style             = "fg:color_yellow"
+show_milliseconds = false
+
+[jobs]
+symbol = "⚙"
+style  = "fg:color_yellow bold"
+format = "[$symbol$number]($style) "
+
+[status]
+disabled             = false
+style                = "fg:color_red bold"
+format               = "[$symbol$status]($style) "
+symbol               = "✗ "
+success_symbol       = ""
+not_executable_symbol = " "
+not_found_symbol     = "󰍉 "
+sigint_symbol        = "󱙄 "
+signal_symbol        = "⚡"
+
+[nodejs]
+symbol = " "
+style  = "fg:color_green"
+format = '[$symbol($version) ]($style)'
+
+[c]
+symbol = " "
+style  = "fg:color_blue"
+format = '[$symbol($version) ]($style)'
+
+[cpp]
+symbol = " "
+style  = "fg:color_blue"
+format = '[$symbol($version) ]($style)'
+
+[rust]
+symbol = " "
+style  = "fg:color_orange"
+format = '[$symbol($version) ]($style)'
+
+[golang]
+symbol = " "
+style  = "fg:color_cyan"
+format = '[$symbol($version) ]($style)'
+
+[php]
+symbol = " "
+style  = "fg:color_purple"
+format = '[$symbol($version) ]($style)'
+
+[java]
+symbol = " "
+style  = "fg:color_orange"
+format = '[$symbol($version) ]($style)'
+
+[kotlin]
+symbol = " "
+style  = "fg:color_purple"
+format = '[$symbol($version) ]($style)'
+
+[haskell]
+symbol = " "
+style  = "fg:color_purple"
+format = '[$symbol($version) ]($style)'
+
+[python]
+symbol = " "
+style  = "fg:color_green"
+format = '[${symbol}${pyenv_prefix}(${version})(\($virtualenv\)) ]($style)'
+
+[lua]
+symbol = " "
+style  = "fg:color_blue"
+format = '[$symbol($version) ]($style)'
+
+[docker_context]
+symbol = " "
+style  = "fg:color_cyan"
+format = '[$symbol$context ]($style)'
+
+[kubernetes]
+disabled = false
+symbol   = "󱃾 "
+style    = "fg:color_blue"
+format   = '[$symbol$context(\[$namespace\]) ]($style)'
+
+[aws]
+symbol   = " "
+style    = "fg:color_yellow"
+format   = '[$symbol($profile)(\[$duration\]) ]($style)'
+disabled = false
+
+[gcloud]
+symbol   = " "
+style    = "fg:color_blue"
+format   = '[$symbol$account(@$domain)(\[$project\]) ]($style)'
+disabled = false
+
+[conda]
+style  = "fg:color_bg1"
+format = '[$symbol$environment ]($style)'
+
+[pixi]
+style  = "fg:color_bg1"
+format = '[$symbol($version) ($environment) ]($style)'
+
+[line_break]
+disabled = false
+
+[character]
+disabled                  = false
+success_symbol            = '[╰─❯](bold fg:color_green)'
+error_symbol              = '[╰─❯](bold fg:color_red)'
+vimcmd_symbol             = '[╰─❮](bold fg:color_green)'
+vimcmd_replace_one_symbol = '[╰─❮](bold fg:color_purple)'
+vimcmd_replace_symbol     = '[╰─❮](bold fg:color_purple)'
+vimcmd_visual_symbol      = '[╰─❮](bold fg:color_yellow)'

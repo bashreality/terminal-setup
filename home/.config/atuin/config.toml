@@ -1,0 +1,16 @@
+## Tryb LOKALNY - bez rejestracji!
+[sync]
+sync_frequency = "0"
+
+## Ustawienia wyszukiwania
+[search]
+search_mode = "fulltext"  # lub "fuzzy" jeśli wolisz
+filter_mode = "global"    # "global", "directory" lub "session"
+
+## UI
+show_preview = true
+show_help = true
+exit_mode = "return-query"
+
+## Historia
+max_history_length = 100000

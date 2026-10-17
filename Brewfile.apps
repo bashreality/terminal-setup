@@ -1,0 +1,5 @@
+# Applications installed outside Homebrew on the source machine.
+# `brew bundle dump` does not see them, so they are kept here by hand.
+cask "ghostty"
+cask "iterm2"
+cask "orbstack"   # provides docker and kubectl in /usr/local/bin
